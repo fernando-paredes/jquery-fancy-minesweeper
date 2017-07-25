@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!--
+	/*!
+	 * jquery Fancy Minesweeper
+	 * https://github.com/fernando-paredes/jquery-fancy-minesweeper
+	 * @license MIT licensed
+	 *
+	 * Copyright (C) 2017 fparedes.com - A project by Fernando Paredes
+	 */
+	 -->
+
+	<title>jquery Fancy Minesweeper</title>
+
+	<meta charset="utf-8">
+	
+
+	<!-- Phones -->
+	<meta name="theme-color" content="#1D976C" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
+
+
+	<!-- Reset.css -->
+	<link rel="stylesheet" type="text/css" href="libs/reset-css/reset.min.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link href="libs/google-fonts/fonts.css" rel="stylesheet">
+
+	
+	<!-- App styles -->
+	<link href="style.css" rel="stylesheet">
+
+
+	<!-- jQuery -->
+	<script src="libs/jquery/jquery-3.2.1.min.js"></script>
+	<!-- js-Cookie -->
+	<script src="libs/lockr/lockr.js"></script>
+
+	<!-- Load the app -->
+	<script src="app.js"></script>
+
+</head>
+<body>
+
+	<script type="text/javascript" src="cordova.js"></script>
+
+		
+
+		<header id="header">
+			<div class="container">
+				<div class="mines-counter-container counter-cell">
+					<span id="mines-counter">0</span>
+					<span class="sub-counter">Minas</span>
+				</div>
+				<div class="new-game icon-cell"><a href="#reload-game"><i class="fa fa-refresh" aria-hidden="true"></i></a></div>
+				<div class="config icon-cell"><a href="#show-config"><i class="fa fa-cog" aria-hidden="true"></i></a></div>
+				<div class="chronometer-container counter-cell">
+					<span id="chronometer"> 0</span>
+					<span class="sub-counter">Tiempo</span>
+				</div>
+			</div>
+		</header>
+	
+		<div id="minesweeper-board-container">
+			<div id="minesweeper-board"></div>
+		</div>
+
+		<div id="victory">
+
+			<div class="message">You won!</div>
+
+			<div class="rainbow">
+				<div class="stripe stripe-1"></div>
+				<div class="stripe stripe-2"></div>
+				<div class="stripe stripe-3"></div>
+				<div class="stripe stripe-4"></div>
+				<div class="stripe stripe-5"></div>
+			</div>
+		</div>
+		<audio id="rainbowAudio">
+			<source src="audio/harp.mp3"></source>
+			Your browser isn't invited for super fun audio time.
+		</audio>
+
+
+		<div id="shame"></div>
+		<div id="shame-message">You lost!</div>
+		<audio id="explosionAudio">
+			<source src="audio/explosion.mp3"></source>
+			Your browser isn't invited for super fun audio time.
+		</audio>
+
+
+
+		<div id="body-overlay">
+			
+		</div>
+
+		<div id="config-modal">
+			<h2>Configuration</h2>
+
+			<form>
+				<p>
+					<label for="grid-width">Grid width:</label>
+					<input type="number" id="grid-width" value="16">
+				</p>
+
+				<p>
+					<label for="grid-width">Grid height:</label>
+					<input type="number" id="grid-height" value="30">
+				</p>
+
+				<p>
+					<label for="mines-number">Number of mines:</label>
+					<input type="number" id="mines-number" value="99">
+				</p>
+			</form>
+
+			<p class="note">Note: any change in these settings will be applied after a new game is started.</p>
+
+			<p class="modal-links"><a href="#apply-changes">Apply</a> <a href="#cancel-changes">Cancel</a></p>
+		</div>
+
+	
+
+
+</body>
+</html>
